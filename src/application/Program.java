@@ -33,10 +33,24 @@ public class Program {
 		System.out.println("New id = " + newSeller.getId());
 		
 		System.out.println("========Test 5: update =======");
-		seller = sellerDao.findById(1);
+		seller = sellerDao.findById(4);
 		seller.setName("bob");
 		sellerDao.update(seller);
 		System.out.println(sellerDao.findById(1));
+		
+		System.out.println("======Test 6: seller delete ======");
+		List<Seller> listx = sellerDao.findAll();
+		System.out.println("Before: ");
+		for (Seller e : listx) {
+			System.out.println(e);
+		}
+		
+		System.out.println("==== after");
+		sellerDao.deleteById(12);
+		listx = sellerDao.findAll();
+		for (Seller e : listx) {
+			System.out.println(e);
+		}
 	}
 	
 
