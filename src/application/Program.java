@@ -20,6 +20,12 @@ public class Program {
 		for (Seller dp : list) {
 			System.out.println(dp);
 		}
+		System.out.println("=======Test 3: find all========");
+		List<Seller> list1 = sellerDao.findAll();
+		for (Seller dp : list1) {
+			System.out.println(dp);
+		}
 	}
+	
 
 }
