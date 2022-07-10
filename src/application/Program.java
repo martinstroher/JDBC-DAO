@@ -28,9 +28,15 @@ public class Program {
 		}
 		
 		System.out.println("========Test 4: insert ========");
-		Seller newSeller = new Seller(1, "Greg", "greg@gmail.com", new Date(), 4000.0, department);
+		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, department);
 		sellerDao.insert(newSeller);
 		System.out.println("New id = " + newSeller.getId());
+		
+		System.out.println("========Test 5: update =======");
+		seller = sellerDao.findById(1);
+		seller.setName("bob");
+		sellerDao.update(seller);
+		System.out.println(sellerDao.findById(1));
 	}
 	
 
